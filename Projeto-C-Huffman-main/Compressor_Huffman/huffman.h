@@ -1,6 +1,7 @@
 #ifndef HUFFMAN_H
 #define HUFFMAN_H
 
+#include "tiposonlinegdb.h"  // Agora o U8 é definido aqui
 #include "codigo.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -10,7 +11,11 @@
 #define MAX_EXT_LEN 10                           // Tamanho máximo para extensões
 #define MAX_PATH_LEN_HUFFMAN 1024               // Tamanho único para caminhos em todo o projeto
 
-typedef unsigned char U8;
+//typedef unsigned char U8;
+// Garantir que U8 não seja redefinido
+#ifndef U8
+    //typedef unsigned char U8;
+#endif
 
 typedef struct No {
     U8 data;
