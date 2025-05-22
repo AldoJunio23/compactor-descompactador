@@ -16,11 +16,7 @@
 #endif
 
 void clearScreen() {
-    #ifdef _WIN32
-        system("cls");
-    //#else
-        //system("clear");
-    #endif
+    system("clear");
 }
 
 typedef struct {
@@ -147,8 +143,7 @@ int main() {
                 break;
             }
             fclose(testFile);
-
-            // Obter tamanho original
+            
             size_t originalBytes;
             getFileSize(inputPath, &originalBytes);
             char* originalSize = formatFileSize(originalBytes);
