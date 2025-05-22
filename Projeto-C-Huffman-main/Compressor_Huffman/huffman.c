@@ -488,4 +488,5 @@ int descomprimir(const char* compressedFile, const char* decompressedFile) {
     return 0;
 }
 
-///Users/aldo/00 - Development/00-GitHub/compactor-descompactador/Projeto-C-Huffman-main/Compressor_Huffman
+// /Users/aldo/00 - Development/00-GitHub/compactor-descompactador/Projeto-C-Huffman-main/Compressor_Huffman
+// ./huff

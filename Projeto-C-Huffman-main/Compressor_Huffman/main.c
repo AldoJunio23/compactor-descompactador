@@ -9,12 +9,6 @@
 
 #define MAX_PATH_LEN 512    // Definir um tamanho máximo consistente
 
-#ifdef _WIN32
-#include <windows.h>
-//#else
-//#include <unistd.h>
-#endif
-
 void clearScreen() {
     system("clear");
 }
@@ -296,3 +290,6 @@ digitar o nome do arquivo: por exemplo, teste.txt (nao esquecer de colocar a ext
 case 2: C:/Users/Felipe Almeida/Desktop/testes/teste.pcb
 /Users/u22130/Desktop/testes/imagem.jpeg
 */
+
+// /Users/aldo/00 - Development/00-GitHub/compactor-descompactador/Projeto-C-Huffman-main/Compressor_Huffman
+// ./huff
