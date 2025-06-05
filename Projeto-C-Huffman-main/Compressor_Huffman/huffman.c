@@ -13,7 +13,8 @@ No* criarNo(unsigned char data, int freq) {
     
     novo->data = data;
     novo->freq = freq;
-    novo->esq = novo->dir = NULL;
+    novo->esq = NULL;
+    novo->dir = NULL;
     return novo;
 }
 
@@ -488,5 +489,6 @@ int descomprimir(const char* compressedFile, const char* decompressedFile) {
     return 0;
 }
 
-// /Users/aldo/00 - Development/00-GitHub/compactor-descompactador/Projeto-C-Huffman-main/Compressor_Huffman
+// Users/aldo/00 - Development/00-GitHub/compactor-descompactador/Projeto-C-Huffman-main/Compressor_Huffman/test
+
 // ./huff

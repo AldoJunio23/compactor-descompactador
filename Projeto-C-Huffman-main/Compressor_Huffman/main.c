@@ -207,7 +207,7 @@ int main() {
             } else {
                 strcpy(outputPath, "./");
             }
-            strcat(outputPath, "decompressed_");
+            strcat(outputPath, "decomprimido_");
             strcat(outputPath, baseName);
 
             // Obter tamanho ANTES da descompressão
