@@ -65,6 +65,7 @@ No* construirArvore(unsigned char* dados, int* frequencias, int tamanho) {
     return raiz;
 }
 
+
 static void gerarCodigosAux(No* raiz, Codigo* codigoAtual, HuffmanCodes* huffmanCodes) {
     if (raiz->esq == NULL && raiz->dir == NULL) {
         huffmanCodes->codigos[raiz->data] = (Codigo*)malloc(sizeof(Codigo));
@@ -86,6 +87,7 @@ static void gerarCodigosAux(No* raiz, Codigo* codigoAtual, HuffmanCodes* huffman
     }
 }
 
+//caminha pela árvore e constroi o dicionario.
 void gerarCodigos(No* raiz, HuffmanCodes* huffmanCodes) {
     if (raiz == NULL) return;
     
@@ -172,7 +174,7 @@ No* lerArvore(FILE* arquivo) {
         return NULL;
     }
 
-    // Pular até o início da árvore (depois de EXT=...|TREE=)
+    // Pular ate o início da árvore (depois de EXT=...|TREE=)
     int c;
     while ((c = fgetc(arquivo)) != '=' && c != EOF); // Pular EXT=
     if (c == EOF) return NULL;
@@ -200,7 +202,7 @@ int comprimir(const char* inputFile, const char* outputFile) {
         return 1;
     }
 
-    // Contar frequências dos bytes
+    //Conta frequências dos bytes
     int frequencias[256] = {0};
     unsigned char byte;
     long totalBytes = 0;
@@ -240,7 +242,7 @@ int comprimir(const char* inputFile, const char* outputFile) {
         return 1;
     }
 
-    // Gerar códigos Huffman
+    //Gerar códigos Huffman
     HuffmanCodes huffmanCodes;
     for (int i = 0; i < 256; i++) {
         huffmanCodes.codigos[i] = NULL;
@@ -267,8 +269,7 @@ int comprimir(const char* inputFile, const char* outputFile) {
     escreverArvore(outFile, root, extOrig);
     fwrite(&totalBytes, sizeof(long), 1, outFile);
 
-    // Reabrir arquivo de entrada para compressão
-    // Reabrir arquivo de entrada para compressão
+    //reabre arquivo de entrada para compressão
     inFile = fopen(inputFile, "rb");
     if (!inFile) {
         perror("Erro ao reabrir arquivo de entrada");
@@ -277,7 +278,7 @@ int comprimir(const char* inputFile, const char* outputFile) {
         return 1;
     }
 
-    // Comprimir dados
+    //comprimir dados
     unsigned char buffer = 0;
     int bitCount = 0;
     

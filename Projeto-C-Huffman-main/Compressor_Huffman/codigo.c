@@ -1,5 +1,5 @@
 #include "codigo.h"
-#include <stdlib.h>  // Para malloc, free e NULL
+#include <stdlib.h>  //para malloc, free e NULL
 
 bool novo_codigo(Codigo* c) // por referência
 {
